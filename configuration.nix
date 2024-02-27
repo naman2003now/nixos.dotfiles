@@ -109,7 +109,6 @@
   environment.systemPackages = with pkgs; [
      vim
      wget
-     git
      neovim
      flameshot
      xclip
@@ -120,6 +119,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
+  programs.git.enable = true;
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
