@@ -20,7 +20,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.naman = import ./home.nix;
+            home-manager.users.naman = import ./home;
           }
         ];
       };
