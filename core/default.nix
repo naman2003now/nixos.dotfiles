@@ -6,6 +6,7 @@
 		./users.nix
 		./sound.nix
 		./system-packages.nix
+		./window-manager
 	];
 
 }

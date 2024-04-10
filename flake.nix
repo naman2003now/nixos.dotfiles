@@ -15,7 +15,6 @@
         system = "x86_64-linux";
         modules = [
           ./core
-	  ./window-manager
 
           home-manager.nixosModules.home-manager
           {
