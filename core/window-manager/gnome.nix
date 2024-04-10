@@ -32,7 +32,7 @@
     gnome-music
     gnome-system-monitor
     pkgs.gnome-connections
-    pkgs.gnome-console
+    # pkgs.gnome-console
     pkgs.gnome-text-editor
   ];
 
