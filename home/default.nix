@@ -1,10 +1,10 @@
 {config, pkgs, inputs, ...} : {
-	home.username = "naman";
-	home.homeDirectory = "/home/naman";
-    imports = [
-	./terminal
-	./packages.nix
-    ];
+  home.username = "naman";
+  home.homeDirectory = "/home/naman";
+  imports = [
+    ./terminal
+    ./packages.nix
+  ];
 
   # basic configuration of git
   programs.git = {
