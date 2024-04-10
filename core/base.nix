@@ -9,8 +9,8 @@
   };
   nix.settings.auto-optimise-store = true;
 
-	networking.hostName = "nixos"; 
-	networking.networkmanager.enable = true;
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Kolkata";
 
@@ -31,5 +31,5 @@
   services.printing.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  system.stateVersion = "23.11"; 
+  system.stateVersion = "23.11";
 }

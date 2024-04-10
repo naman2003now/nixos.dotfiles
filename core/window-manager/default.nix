@@ -1,5 +1,5 @@
-{configs, pkgs, inputs, ...} : {
-	imports = [
-		./gnome.nix
-	];
+{ configs, pkgs, inputs, ... }: {
+  imports = [
+    ./gnome.nix
+  ];
 }

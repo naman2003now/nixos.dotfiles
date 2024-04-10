@@ -1,4 +1,4 @@
-{configs, pkgs, inputs, ... } : {
+{ configs, pkgs, inputs, ... }: {
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -8,21 +8,21 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Removing Bloat
-  services.xserver.excludePackages = with  pkgs; [ xterm ]; 
+  services.xserver.excludePackages = with  pkgs; [ xterm ];
   environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab      	# disk usage analyzer
-    pkgs.snapshot    	# photo booth
-    eog         	# image viewer
-    epiphany    	# web browser
-    simple-scan 	# document scanner
-    totem       	# video player
-    yelp        	# help viewer
-    evince      	# document viewer
-    file-roller 	# archive manager
-    geary       	# email client
-    seahorse    	# password manager
+    baobab # disk usage analyzer
+    pkgs.snapshot # photo booth
+    eog # image viewer
+    epiphany # web browser
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
+    evince # document viewer
+    file-roller # archive manager
+    geary # email client
+    seahorse # password manager
 
-    pkgs.gnome-tour 
+    pkgs.gnome-tour
     gnome-clocks
     gnome-calendar
     gnome-calculator
@@ -39,7 +39,7 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "naman";
-  
+
   # GNOME autologin workaround
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;

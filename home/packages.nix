@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... } : {
+{ config, pkgs, inputs, ... }: {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # PCB designer    

@@ -1,5 +1,5 @@
-{config, pkgs, inputs, ...}: {
+{ config, pkgs, inputs, ... }: {
   programs.kitty = {
-    enable = true; 
+    enable = true;
   };
 }

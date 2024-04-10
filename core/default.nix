@@ -1,12 +1,12 @@
-{config, pkgs, inputs, ...}: {
+{ config, pkgs, inputs, ... }: {
 
-	imports = [
-		./hardware-configuration.nix
-		./base.nix
-		./users.nix
-		./sound.nix
-		./system-packages.nix
-		./window-manager
-	];
+  imports = [
+    ./hardware-configuration.nix
+    ./base.nix
+    ./users.nix
+    ./sound.nix
+    ./system-packages.nix
+    ./window-manager
+  ];
 
 }

@@ -1,8 +1,9 @@
-{config, pkgs, inputs, ...} : {
+{ config, pkgs, inputs, ... }: {
   home.username = "naman";
   home.homeDirectory = "/home/naman";
   imports = [
     ./terminal
+    ./editor
     ./packages.nix
   ];
 
