@@ -14,16 +14,18 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
         modules = [
           ./core
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.naman = import ./home;
-          }
         ];
+      };
+    };
+    homeConfigurations = {
+      # FIXME replace with your username@hostname
+      "naman@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs;};
+        modules = [./home];
       };
     };
   };
