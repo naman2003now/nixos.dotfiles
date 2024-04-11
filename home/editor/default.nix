@@ -1,4 +1,4 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [ ./helix.nix ];
+  imports = [ ./helix ];
 }
