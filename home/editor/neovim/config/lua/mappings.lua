@@ -1,8 +1,12 @@
 local map = vim.keymap.set
+local wk = require("which-key")
 
--- nvim-tree mappings
-map("n", "<leader>e", "<cmd>NvimTreeFocus<cr>", { desc = "Focus Explorer" })
-map("n", "C-n", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
+wk.register({
+	e = { "<cmd>NvimTreeFocus<cr>", "Focus Explorer" },
+	g = {
+		name = "git",
+		l = { "<cmd>LazyGit<cr>", "Open Lazy Git" },
+	},
+}, { prefix = "<leader>" })
 
--- Lazy Git
-map("n", "<leader>gl", "<cmd>LazyGit<cr>", { desc = "Open Lazy Git" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
