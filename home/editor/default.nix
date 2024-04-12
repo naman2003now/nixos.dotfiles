@@ -1,4 +1,4 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [ ./helix ];
+  imports = [ ./neovim ];
 }
