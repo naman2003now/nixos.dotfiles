@@ -4,6 +4,11 @@
     # PCB designer    
     kicad
 
+    #development
+    rustup
+    lldb
+    cmake
+    gcc
 
     # archives
     zip
