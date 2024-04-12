@@ -57,4 +57,14 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = require("configs.treesitter"),
+		event = { "BufReadPost", "BufNewFile" },
+		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+		build = ":TSUpdate",
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
 }

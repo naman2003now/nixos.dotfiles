@@ -5,6 +5,7 @@
     recursive = true;
   };
   home.packages = [
+    pkgs.tree-sitter
     pkgs.neovim
     pkgs.stylua
   ];
