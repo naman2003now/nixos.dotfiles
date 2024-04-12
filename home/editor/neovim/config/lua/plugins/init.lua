@@ -19,4 +19,18 @@ return {
 			require("nvim-tree").setup({})
 		end,
 	},
+	{
+
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 }
