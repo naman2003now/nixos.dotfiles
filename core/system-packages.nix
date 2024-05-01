@@ -4,5 +4,6 @@
     neovim
     vim
     git
+    xclip
   ];
 }

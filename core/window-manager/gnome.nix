@@ -2,6 +2,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.touchegg.enable = true;
 
   # Enable the Gnome Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;

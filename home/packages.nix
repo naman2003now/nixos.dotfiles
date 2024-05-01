@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, pkgs-unstable, inputs, ... }: {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # PCB designer    
@@ -33,10 +33,18 @@
     zstd
     gnupg
 
+    # For Love
+    telegram-desktop
+    discord
+
+    pkgs-unstable.obsidian
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+
+    inputs.myecho.packages."${pkgs.system}".default
   ];
 }
