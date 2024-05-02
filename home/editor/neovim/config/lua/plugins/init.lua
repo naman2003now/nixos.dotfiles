@@ -1,108 +1,84 @@
-local cmp = require "cmp"
+return {
+	{
+		"catppuccin/nvim",
+		lazy = false,
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("configs.catppuccin")
+		end,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("configs.nvim-tree")
+		end,
+	},
+	{
 
-local plugins = {
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "nvchad.configs.lspconfig"
-      require "configs.lspconfig"
-    end,
-  },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^4",
-    ft = { "rust" },
-    dependencies = "neovim/nvim-lspconfig",
-    config = function()
-      -- require "configs.rustaceanvim"
-    end,
-  },
-  {
-    "mfussenegger/nvim-dap",
-    init = function()
-      -- require("nvchad.core.utils").load_mappings "dap"
-    end,
-  },
-  {
-    "saecki/crates.nvim",
-    ft = { "toml" },
-    config = function(_, opts)
-      local crates = require "crates"
-      crates.setup(opts)
-      require("cmp").setup.buffer {
-        sources = { { name = "crates" } },
-      }
-      crates.show()
-      require("core.utils").load_mappings "crates"
-    end,
-  },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end,
-  },
-  {
-    "theHamsta/nvim-dap-virtual-text",
-    lazy = false,
-    config = function(_, opts)
-      require("nvim-dap-virtual-text").setup()
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require "nvchad.configs.cmp"
-      M.completion.completeopt = "menu,menuone,noselect"
-      M.mapping["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = false,
-      }
-      table.insert(M.sources, { name = "crates" })
-      return M
-    end,
-  },
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre",
-    config = function()
-      require "configs.conform"
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "c",
-        "cpp",
-        "rust",
-        "toml",
-      },
-    },
-  },
-  {
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim",
-    },
-    lazy = false,
-    config = function()
-      require("telescope").load_extension "lazygit"
-      require("lazygit.utils").project_root_dir()
-    end,
-  },
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		config = function()
+			require("configs.which-key")
+		end,
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		cmd = {
+			"Telescope",
+		},
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = require("configs.treesitter"),
+		event = { "BufReadPost", "BufNewFile" },
+		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+		build = ":TSUpdate",
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-buffer", -- source for text in buffer
+			"hrsh7th/cmp-path", -- source for file system paths
+			"L3MON4D3/LuaSnip", -- luasnip
+			"saadparwaiz1/cmp_luasnip", -- for autocompletion
+			"onsails/lspkind.nvim", -- vs-code like pictograms
+		},
+		config = function()
+			require("configs.nvim-cmp")
+		end,
+	},
 }
-return plugins
