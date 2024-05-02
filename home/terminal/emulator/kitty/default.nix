@@ -10,7 +10,7 @@
 
   fonts.fontconfig.enable = true;
   home.packages = [
-    pkgs.fish
+    pkgs.nushell
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 }
