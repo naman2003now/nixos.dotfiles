@@ -17,3 +17,10 @@ wk.register({
 }, { prefix = "<leader>" })
 
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
+
+-- Copilot
+map("i", "<C-CR>", 'copilot#Accept("\\<CR>")', {
+	expr = true,
+	replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true
