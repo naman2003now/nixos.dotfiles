@@ -4,11 +4,18 @@
     # PCB designer    
     kicad
 
-    #development
+    #rust & C++
     rustup
     lldb
     cmake
     gcc
+
+    # python
+    python3
+    black
+
+    # nodejs
+    nodejs
 
     # archives
     zip
