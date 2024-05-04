@@ -14,11 +14,12 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = require("naman.lazy")
+local lazy_config = require("naman")
 
 -- load plugins
 require("lazy").setup({
 	{ import = "naman.plugins" },
+	{ import = "naman.plugins.lsp" },
 }, lazy_config)
 
 vim.schedule(function()
