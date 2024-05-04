@@ -27,6 +27,8 @@
     LC_TIME = "en_IN";
   };
 
+  programs.nix-ld.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   nixpkgs.config.allowUnfree = true;
