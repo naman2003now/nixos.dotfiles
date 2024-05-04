@@ -24,3 +24,15 @@ map("i", "<C-CR>", 'copilot#Accept("\\<CR>")', {
 	replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
+
+-- Window Navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Navigate Left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Navigate Down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Navigate Up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Navigate Right" })
+
+-- Resize Windows
+map("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize Up" })
+map("n", "<C-Down>", ":resize -2<CR>", { desc = "Resize Down" })
+map("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Resize Left" })
+map("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Resize Right" })
