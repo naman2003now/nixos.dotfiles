@@ -25,11 +25,11 @@ map("i", "<C-CR>", 'copilot#Accept("\\<CR>")', {
 })
 vim.g.copilot_no_tab_map = true
 
--- Window Navigation
-map("n", "<C-h>", "<C-w>h", { desc = "Navigate Left" })
-map("n", "<C-j>", "<C-w>j", { desc = "Navigate Down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Navigate Up" })
-map("n", "<C-l>", "<C-w>l", { desc = "Navigate Right" })
+-- Tmux Window Navigation
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate Left" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate Down" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate Up" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate Right" })
 
 -- Resize Windows
 map("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize Up" })
