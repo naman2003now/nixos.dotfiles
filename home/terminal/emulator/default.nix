@@ -1,5 +1,5 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    ./kitty
+    ./alacritty
   ];
 }
