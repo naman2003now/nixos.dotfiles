@@ -10,6 +10,8 @@ return {
 			javascript = { { "prettierd", "prettier" } },
 			-- Rust formater
 			rust = { "rustfmt" },
+			-- C++ formatter
+			cpp = { "clang-format" },
 		},
 		format_on_save = {
 			-- These options will be passed to conform.format()
