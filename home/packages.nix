@@ -4,11 +4,14 @@
     # PCB designer    
     kicad
 
-    #rust & C++
+    # rust
     rustup
     lldb
     cmake
+
+    # C++
     gcc
+    clang-tools
 
     # python
     python3
