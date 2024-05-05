@@ -19,7 +19,7 @@ wk.register({
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
 
 -- Copilot
-map("i", "<C-CR>", 'copilot#Accept("\\<CR>")', {
+map("i", "<TAB>", 'copilot#Accept("\\<TAB>")', {
 	expr = true,
 	replace_keycodes = false,
 })
