@@ -8,6 +8,7 @@
   home.packages = [
     pkgs-unstable.alacritty
     pkgs.fish
+    pkgs.tmux
     (pkgs-unstable.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 }

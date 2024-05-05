@@ -2,4 +2,4 @@ import = [
   "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
-shell = "fish"
+shell = { program = "fish", args = ["-l", "-c", "tmux -u attach || tmux -u"] }
