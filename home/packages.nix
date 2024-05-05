@@ -4,6 +4,9 @@
     # PCB designer    
     kicad
 
+    onlyoffice-bin
+    corefonts
+
     # rust
     rustup
     lldb
