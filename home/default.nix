@@ -4,6 +4,7 @@
   imports = [
     ./terminal
     ./editor
+    ./window-manager
     ./packages.nix
     ./git.nix
   ];
