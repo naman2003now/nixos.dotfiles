@@ -4,8 +4,9 @@
     # PCB designer    
     kicad
 
-    onlyoffice-bin
-    corefonts
+    pkgs-unstable.libreoffice-fresh
+    hunspell
+    hunspellDicts.en-us
 
     # rust
     rustup
