@@ -7,6 +7,7 @@
     pkgs-unstable.libreoffice-fresh
     hunspell
     hunspellDicts.en-us
+    corefonts
 
     # rust
     rustup
