@@ -36,4 +36,13 @@
   system.stateVersion = "23.11";
 
   hardware.keyboard.qmk.enable = true;
+
+  services = {
+    syncthing = {
+      enable = true;
+      user = "naman";
+      dataDir = "/home/naman/Documents"; # Default folder for new synced folders
+      configDir = "/home/naman/.config/syncthing"; # Folder for Syncthing's settings and keys
+    };
+  };
 }

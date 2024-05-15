@@ -1,7 +1,13 @@
 local wibox = require("wibox")
+local awful = require("awful")
+local gears = require("gears")
 
 return function(s)
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({
+		position = "bottom",
+		screen = s,
+		type = "dock",
+	})
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({

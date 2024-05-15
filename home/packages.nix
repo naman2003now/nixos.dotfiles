@@ -9,10 +9,14 @@
     hunspellDicts.en-us
     corefonts
 
+    # assembly
+    nasm
+
     # rust
     rustup
     lldb
     cmake
+    pkg-config
 
     # C++
     gcc
@@ -52,7 +56,15 @@
     telegram-desktop
     discord
 
+    # Note taking
     pkgs-unstable.obsidian
+    logseq
+    todoist-electron
+
+    # Chess
+    pkgs-unstable.chessx
+    pkgs-unstable.stockfish
+    etcher
 
     # nix related
     #
