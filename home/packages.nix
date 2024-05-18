@@ -62,9 +62,7 @@
     todoist-electron
 
     # Chess
-    pkgs-unstable.chessx
     pkgs-unstable.stockfish
-    etcher
 
     # nix related
     #
@@ -73,5 +71,35 @@
     nix-output-monitor
 
     inputs.myecho.packages."${pkgs.system}".default
+
+
+    # AppImages
+    (appimageTools.wrapType2 {
+      name = "msty";
+      src = fetchurl {
+        url = "https://assets.msty.app/Msty_x86_64.AppImage";
+        hash = "sha256-7d4JuGdPsOtRhm/r8XH0Xn6Cf4q2XtSiPzm8i9JnYwc=";
+      };
+      extraPkgs = pkgs: with pkgs; [ ];
+    })
+
+    (appimageTools.wrapType2 {
+      name = "llm-studio";
+      src = fetchurl {
+        url = "https://releases.lmstudio.ai/linux/0.2.23/beta/LM_Studio-0.2.23-Ubuntu-20.04.AppImage";
+        hash = "sha256-QLP4S9fuxumrTTZEeVbjkJYZ2QGw3m3lnRp3NJSoMwg=";
+      };
+      extraPkgs = pkgs: with pkgs; [ ];
+    })
+
+    (appimageTools.wrapType2 {
+      name = "en-croissant";
+      src = fetchurl {
+        url = "https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.10.0/en-croissant_0.10.0_amd64.AppImage";
+        hash = "sha256-dCPDdd9zY7MR6G3HWbNib5LAg7vJYpjcuWh+ZbnxuI4=";
+      };
+      extraPkgs = pkgs: with pkgs; [ libthai ];
+    })
   ];
+
 }
