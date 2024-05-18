@@ -7,6 +7,7 @@
     ./sound.nix
     ./system-packages.nix
     ./window-manager
+    ./nextcloud.nix
   ];
 
 }
