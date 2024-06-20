@@ -1,6 +1,8 @@
 { config, pkgs, pkgs-unstable, inputs, ... }: {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    google-chrome
+
     # PCB designer    
     kicad
 
@@ -12,11 +14,16 @@
     # assembly
     nasm
 
+    pkgs-unstable.alvr
+
     # rust
     rustup
     lldb
     cmake
     pkg-config
+    pkgs-unstable.wasm-bindgen-cli
+
+    pkgs-unstable.godot_4
 
     # C++
     gcc
@@ -25,6 +32,8 @@
     # python
     python3
     black
+    manim
+    thonny
 
     # nodejs
     nodejs
@@ -84,7 +93,7 @@
     })
 
     (appimageTools.wrapType2 {
-      name = "llm-studio";
+      name = "lm-studio";
       src = fetchurl {
         url = "https://releases.lmstudio.ai/linux/0.2.23/beta/LM_Studio-0.2.23-Ubuntu-20.04.AppImage";
         hash = "sha256-QLP4S9fuxumrTTZEeVbjkJYZ2QGw3m3lnRp3NJSoMwg=";
@@ -97,6 +106,33 @@
       src = fetchurl {
         url = "https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.10.0/en-croissant_0.10.0_amd64.AppImage";
         hash = "sha256-dCPDdd9zY7MR6G3HWbNib5LAg7vJYpjcuWh+ZbnxuI4=";
+      };
+      extraPkgs = pkgs: with pkgs; [ libthai ];
+    })
+
+    (appimageTools.wrapType2 {
+      name = "balena-etcher";
+      src = fetchurl {
+        url = "https://github.com/balena-io/etcher/releases/download/v1.19.21/balenaEtcher-1.19.21-x64.AppImage";
+        hash = "sha256-dHhz7vcrrJZu4rWXRtwcIt2UvFThZrtKHz9H2qV2H60=";
+      };
+      extraPkgs = pkgs: with pkgs; [ libthai ];
+    })
+
+    (appimageTools.wrapType2 {
+      name = "immersed";
+      src = fetchurl {
+        url = "https://static.immersed.com/dl/Immersed-x86_64.AppImage";
+        hash = "sha256-baor2NPCxHnBuPCaXy8eLQDXawEz480Z4LzjGflsCq0=";
+      };
+      extraPkgs = pkgs: with pkgs; [ libthai ];
+    })
+
+    (appimageTools.wrapType2 {
+      name = "popcorntimes";
+      src = fetchurl {
+        url = "https://github.com/popcorn-official/popcorn-desktop/releases/download/v0.5.1/Popcorn-Time-0.5.1-linux64.AppImage";
+        hash = "sha256-SrcR0FRW7DtPrrte4m86YiMBB6cGgO6W5bccPwBGVeg=";
       };
       extraPkgs = pkgs: with pkgs; [ libthai ];
     })

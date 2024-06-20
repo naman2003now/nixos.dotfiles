@@ -3,7 +3,7 @@
   users.users.naman = {
     isNormalUser = true;
     description = "Naman Agrawal";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" "dialout"];
     shell = pkgs.fish;
   };
 }

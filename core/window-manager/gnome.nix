@@ -38,8 +38,8 @@
   ];
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "naman";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "naman";
 
   # GNOME autologin workaround
   systemd.services."getty@tty1".enable = false;

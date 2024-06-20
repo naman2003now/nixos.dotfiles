@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 {
-  imports = [ ./neovim ];
+  imports = [ ./neovim ./zed.nix ];
 }

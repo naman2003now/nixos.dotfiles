@@ -7,7 +7,8 @@
     ./sound.nix
     ./system-packages.nix
     ./window-manager
-    ./nextcloud.nix
+    # ./nextcloud.nix
+    # ./home-assistant.nix
   ];
 
 }
