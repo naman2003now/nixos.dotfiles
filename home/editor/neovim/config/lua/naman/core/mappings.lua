@@ -14,6 +14,10 @@ wk.register({
 		b = { "<cmd>Telescope buffers<cr>", "Search buffers" },
 		h = { "<cmd>Telescope help_tags<cr>", "Search Help" },
 	},
+	c = {
+		r = { "<cmd>CompetiTest run<cr>", "CompetiTest run" },
+		p = { "<cmd>CompetiTest receive problem<cr>", "CompetiTest receive problem" },
+	},
 }, { prefix = "<leader>" })
 
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
@@ -36,3 +40,4 @@ map("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize Up" })
 map("n", "<C-Down>", ":resize -2<CR>", { desc = "Resize Down" })
 map("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Resize Left" })
 map("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Resize Right" })
+-- CompetiTest
