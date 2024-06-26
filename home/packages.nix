@@ -2,6 +2,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     google-chrome
+    vivaldi
 
     # PCB designer    
     kicad
@@ -22,6 +23,7 @@
     cmake
     pkg-config
     pkgs-unstable.wasm-bindgen-cli
+    pkgs-unstable.dioxus-cli
 
     pkgs-unstable.godot_4
 
@@ -61,6 +63,8 @@
     zstd
     gnupg
 
+    vial
+  
     # For Love
     telegram-desktop
     discord
@@ -81,6 +85,12 @@
 
     inputs.myecho.packages."${pkgs.system}".default
 
+    (retroarch.override {
+       cores = with libretro; [
+         snes9x
+         mgba
+       ];
+     })
 
     # AppImages
     (appimageTools.wrapType2 {
@@ -136,6 +146,7 @@
       };
       extraPkgs = pkgs: with pkgs; [ libthai ];
     })
+
   ];
 
 }
