@@ -73,6 +73,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-fork": {
+      "locked": {
+        "lastModified": 1719400936,
+        "narHash": "sha256-hfrLclXLwJUtRiphA//AowIGMNK78FwZxsqzS/77IxA=",
+        "owner": "naman2003now",
+        "repo": "nixpkgs",
+        "rev": "e969cd4df45b75cfa709ed4e9f15799e424da4a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "naman2003now",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1715961556,
@@ -127,6 +143,7 @@
         "home-manager": "home-manager",
         "myecho": "myecho",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-fork": "nixpkgs-fork",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }

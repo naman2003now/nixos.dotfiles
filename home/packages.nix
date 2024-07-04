@@ -1,8 +1,8 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }: {
+{ config, pkgs, pkgs-unstable, pkgs-fork, inputs, ... }: {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     google-chrome
-    vivaldi
+    android-tools
 
     # PCB designer    
     kicad
@@ -24,12 +24,14 @@
     pkg-config
     pkgs-unstable.wasm-bindgen-cli
     pkgs-unstable.dioxus-cli
-
+    pkgs-fork.jetbrains.rust-rover
     pkgs-unstable.godot_4
+    cargo-generate
 
     # C++
     gcc
     clang-tools
+    SDL2
 
     # python
     python3
@@ -64,7 +66,7 @@
     gnupg
 
     vial
-  
+
     # For Love
     telegram-desktop
     discord
@@ -85,12 +87,14 @@
 
     inputs.myecho.packages."${pkgs.system}".default
 
+    desmume
     (retroarch.override {
-       cores = with libretro; [
-         snes9x
-         mgba
-       ];
-     })
+      cores = with libretro; [
+        snes9x
+        mgba
+        desmume
+      ];
+    })
 
     # AppImages
     (appimageTools.wrapType2 {

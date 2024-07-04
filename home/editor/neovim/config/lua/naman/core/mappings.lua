@@ -18,6 +18,7 @@ wk.register({
 		r = { "<cmd>CompetiTest run<cr>", "CompetiTest run" },
 		p = { "<cmd>CompetiTest receive problem<cr>", "CompetiTest receive problem" },
 	},
+	k = { "<cmd>RustLsp hover actions<cr>", "Hover" },
 }, { prefix = "<leader>" })
 
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Explorer" })
