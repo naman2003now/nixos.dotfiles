@@ -87,14 +87,14 @@
 
     inputs.myecho.packages."${pkgs.system}".default
 
-    desmume
-    (retroarch.override {
-      cores = with libretro; [
-        snes9x
-        mgba
-        desmume
-      ];
-    })
+    # desmume
+    # (retroarch.override {
+    #   cores = with libretro; [
+    #     snes9x
+    #     mgba
+    #     desmume
+    #   ];
+    # })
 
     # AppImages
     (appimageTools.wrapType2 {
